@@ -1,13 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Skills</h1>
-    <p>Welcome to skills main page</p>
-</body>
-</html>
+<%- include('../partials/header') %>
+
+<h1>SKILLS!</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Skill</th>
+            <th>Learned?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% skills.forEach(function(s){ %>
+            <tr>
+                <td><a href="/skills/<%= s.id %>"><%= s.skill %></a></td>
+                <td><% s.proficient ? 'yes' : 'no' %></td>
+                <td>
+                    <form action="/skills/<%= s.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn">X</button>
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+    
+<%- include('../partials/footer') %>
