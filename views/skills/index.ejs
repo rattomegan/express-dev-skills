@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
 <h1>SKILLS!</h1>
-<table>
-    <thead>
+<table class="table">
+    <thead class="thead-dark">
         <tr>
             <th>Skill</th>
             <th>Learned?</th>
@@ -12,10 +12,10 @@
         <% skills.forEach(function(s){ %>
             <tr>
                 <td><a href="/skills/<%= s.id %>"><%= s.skill %></a></td>
-                <td><% s.proficient ? 'yes' : 'no' %></td>
+                <td><%= s.level %></td>
                 <td>
                     <form action="/skills/<%= s.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn">X</button>
+                        <button type="submit" class="btn btn-warning btn-sm">X</button>
                     </form>
                 </td>
             </tr>

@@ -1,7 +1,7 @@
 const skills = [
-    { id: 001, skill: "JavaScript", proficient: true },
-    { id: 002, skill: "HTML", proficient: true },
-    { id: 003, skill: "CSS", proficient: true },
+    { id: 123, skill: "CSS", level: 'Proficient' },
+    { id: 456, skill: "HTML", level: 'Proficient' },
+    { id: 789, skill: "JavaScript", level: 'Proficient' },
 ];
 
 module.exports = {
@@ -25,7 +25,7 @@ function getOne(id) {
 // The skillsObj is starting as our req.body
 function create(skillObj) {
     skillObj.id = Math.floor(Math.random() * 1000);
-    skillObj.proficient = true;
+    skillObj.level = 'Proficient';
     skills.push(skillObj);
 };
 
@@ -37,4 +37,5 @@ function deleteOne(id) {
 function update(id, value) {
     const skillObj = skills.find(skill => skill.id == id);
     skillObj.skill = value.skill;
+    skillObj.level = value.level;
 };

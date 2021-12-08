@@ -1,0 +1,11 @@
+.nav-bar {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    width: 100vh;
+    background: orange;
+}
+
+.nav-bar > * {
+    display: flex;
+}

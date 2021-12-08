@@ -2,10 +2,19 @@
 
 <h1>Edit Skill</h1>
     <form action="/skills/<%= skill.id %>?_method=PUT" method="POST" autocomplete="off">
-        <input name="skill" value="<%= skill.skill %>">
-
+        <label>Skill:
+            <input name="skill" value="<%= skill.skill %>">
+        </label><br><br>
+        <label>Skill Level:
+            <select name="level">
+                <option value="Novice">Novice</option>
+                <option value="Proficient">Proficient</option>
+                <option value="Expert">Expert</option>
+            </select>
+        </label><br><br>
         
-        <button type="submit">Save Skill</button>
+        
+        <button type="submit" class="btn btn-info btn-sm">Save Skill</button>
     </form> 
 
 
