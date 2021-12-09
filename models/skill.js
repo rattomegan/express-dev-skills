@@ -25,7 +25,7 @@ function getOne(id) {
 // The skillsObj is starting as our req.body
 function create(skillObj) {
     skillObj.id = Math.floor(Math.random() * 1000);
-    skillObj.level = 'Proficient';
+    skillObj.level = skillObj.level;
     skills.push(skillObj);
 };
 
